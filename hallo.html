@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes pulse-bubble {
+
+      0%,
+      80%,
+      100% {
+        transform: scale(0);
+        opacity: 0.3;
+      }
+
+      40% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 p-6 font-sans">
+  <div class="max-w-7xl mx-auto space-y-6">
+    <!-- Header -->
+    <div class="flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="Logo" class="w-10 h-10">
+        <h1 class="text-2xl font-bold">AKQSTORE.ID</h1>
+      </div>
+    </div>
+
+    <!-- Top Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <!-- Income -->
+      <div class="bg-gray-100 p-4 rounded shadow">
+        <p class="text-gray-500">Income</p>
+        <h2 class="text-xl font-bold">Rp 50.000.000</h2>
+        <p class="text-sm text-blue-500">+3.85% Since last week</p>
+      </div>
+
+      <!-- Expenses -->
+      <div class="bg-gray-100 p-4 rounded shadow">
+        <p class="text-gray-500">Expenses</p>
+        <h2 class="text-xl font-bold">Rp 30.000.000</h2>
+        <p class="text-sm text-blue-500">+6.85% Since last week</p>
+      </div>
+
+      <!-- Profit -->
+      <div class="bg-gray-100 p-4 rounded shadow">
+        <p class="text-gray-500">Profit</p>
+        <h2 class="text-xl font-bold">Rp 20.000.000</h2>
+        <p class="text-sm text-blue-500">+5.32% Since last week</p>
+      </div>
+
+      <!-- Orders -->
+      <div class="bg-gray-100 p-4 rounded shadow">
+        <p class="text-gray-500">Orders</p>
+        <h2 class="text-xl font-bold">64</h2>
+        <p class="text-sm text-red-500">-2.23% Since last week</p>
+      </div>
+    </div>
+
+    <!-- Calendar & Chat Side by Side -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+      <!-- Calendar -->
+      <div class="bg-gray-100 p-4 rounded shadow">
+        <h3 class="font-semibold mb-4">Calendar</h3>
+        <div class="bg-gray-200 rounded p-4 text-center">
+          <p class="text-lg font-bold mb-2">June 2025</p>
+          <div class="grid grid-cols-7 text-sm text-gray-600 gap-1">
+            <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+            <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
+            <span>15</span><span>16</span><span>17</span><span
+              class="bg-blue-500 text-white rounded">18</span><span>19</span><span>20</span><span>21</span>
+            <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span>
+            <span>29</span><span>30</span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat -->
+      <div class="bg-gray-100 p-4 rounded shadow flex flex-col">
+        <div class="flex items-center gap-3 mb-4 border-b pb-2">
+          <img src="../image/Skylar.jpg" alt="User Avatar" class="w-10 h-10 rounded-full">
+          <div>
+            <p class="font-semibold">RRQ SKYLAR</p>
+            <p class="text-sm text-green-500">● Online</p>
+          </div>
+        </div>
+
+        <div id="chatArea" class="flex-1 space-y-3 overflow-y-auto mb-4 max-h-60 pr-2">
+          <!-- User messages -->
+          <!-- Chat 1: Pemain 1 -->
+          <div class="bg-blue-500 text-white p-3 rounded max-w-[75%] self-end ml-auto mb-2">
+            Bro, lu udah liat strategi draft pick tim RRQ buat turnamen nanti malam? Gila sih meta-nya!
+          </div>
+
+          <!-- Chat 2: Pemain 2 -->
+          <div class="bg-gray-300 text-gray-900 p-3 rounded max-w-[75%] mb-2">
+            Belum nih, kirimin dong! Gue tadi sibuk latihan sama squad.
+          </div>
+
+          <!-- Chat 3: Pemain 1 kirim gambar -->
+          <div class="bg-blue-500 text-white p-3 rounded max-w-[75%] self-end ml-auto mb-2">
+            Nih gue screenshoot barusan dari livestream:
+            <img src="../image/ss.jpg" alt="Strategi Draft RRQ"
+              class="mt-2 rounded shadow-md max-w-full">
+          </div>
+
+          <!-- Chat 4: Pemain 2 -->
+          <div class="bg-gray-300 text-gray-900 p-3 rounded max-w-[75%] mb-2">
+            Wah mantap! Mereka pake combo Franco + Valentina ya? Itu bakal susah dibaca musuh sih.
+          </div>
+
+          <!-- Chat 5: Pemain 1 -->
+          <div class="bg-blue-500 text-white p-3 rounded max-w-[75%] self-end ml-auto mb-2">
+            Iya, makanya nanti kita coba tiru di sparing jam 10 ya. Biar makin solid sebelum lawan EVOS.
+          </div>
+
+          <!-- Chat 6: Pemain 2 -->
+          <div class="bg-gray-300 text-gray-900 p-3 rounded max-w-[75%] mb-2">
+            Sip bro, gue siapin room-nya. BTW, hero lu udah latihan Akai belum?
+          </div>
+
+          <!-- Chat 7: Pemain 1 -->
+          <div class="bg-blue-500 text-white p-3 rounded max-w-[75%] self-end ml-auto">
+            Udah dong! Siap tank in demi kemenangan! 😎
+          </div>
+
+        </div>
+
+        <div class="flex items-center gap-1 ml-2 mb-2">
+          <div class="w-2 h-2 bg-gray-500 rounded-full animate-[pulse-bubble_1s_infinite]"></div>
+          <div class="w-2 h-2 bg-gray-500 rounded-full animate-[pulse-bubble_1s_0.2s_infinite]"></div>
+          <div class="w-2 h-2 bg-gray-500 rounded-full animate-[pulse-bubble_1s_0.4s_infinite]"></div>
+          <span class="ml-2 text-sm text-gray-500">typing...</span>
+        </div>
+
+        <div class="mt-auto flex">
+          <input id="chatInput" type="text" placeholder="Type your message..."
+            class="flex-1 border px-3 py-2 rounded-l" />
+          <button id="sendBtn" class="bg-blue-500 text-white px-4 py-2 rounded-r">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Script -->
+  <script>
+    const sendBtn = document.querySelector('#sendBtn');
+    const chatInput = document.querySelector('#chatInput');
+    const chatArea = document.querySelector('#chatArea');
+
+    sendBtn.addEventListener('click', () => {
+      const message = chatInput.value.trim();
+      if (message !== '') {
+        const bubble = document.createElement('div');
+        bubble.className = 'bg-blue-500 text-white p-2 rounded max-w-[75%] self-end ml-auto';
+        bubble.textContent = message;
+        chatArea.appendChild(bubble);
+        chatInput.value = '';
+        chatArea.scrollTop = chatArea.scrollHeight;
+      }
+    });
+
+    chatInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') sendBtn.click();
+    });
+  </script>
+</body>
+
+</html>

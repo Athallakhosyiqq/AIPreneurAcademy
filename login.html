@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - AI Preneur Academy</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/747/747545.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+  <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      to {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .notif-show {
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+
+    .notif-hide {
+      animation: fadeOut 0.4s ease-in forwards;
+    }
+
+    .animate-ping-slow {
+      animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    .backdrop-blur {
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.75);
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-r from-blue-400 to-indigo-500 flex items-center justify-center min-h-screen font-sans">
+  <div id="loginCard" class="bg-white rounded-xl shadow-lg p-8 max-w-md w-full fade-in-up backdrop-blur">
+    <div class="flex justify-center mb-6">
+      <img src="../image/Screenshot 2025-07-12 180957 (1).png" alt="Logo" class="h-20 w-20 rounded-lg object-cover" />
+    </div>
+    <h2 class="text-3xl font-bold mb-6 text-center text-indigo-600">Masuk ke Akunmu</h2>
+    <form id="loginForm" class="space-y-6" novalidate>
+      <div>
+        <label for="email" class="block mb-2 text-gray-700 font-semibold">Email</label>
+        <input type="email" id="email" name="email" placeholder="contoh@mail.com" required
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+      </div>
+      <div>
+        <label for="password" class="block mb-2 text-gray-700 font-semibold">Kata Sandi</label>
+        <input type="password" id="password" name="password" placeholder="Masukkan kata sandi" required
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+      </div>
+      <button id="loginButton" type="submit"
+        class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded-md transition-colors duration-300 flex justify-center items-center gap-2">
+        <span id="loginBtnText">Masuk</span>
+        <svg id="loginSpinner" class="w-5 h-5 animate-spin hidden" fill="none" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z">
+          </path>
+        </svg>
+      </button>
+      <a href="daftar.html"
+        class="block text-center w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 rounded-md transition-colors duration-300">
+        Daftar Akun
+      </a>
+    </form>
+  </div>
+
+  <!-- Notifikasi -->
+  <div id="notif"
+    class="fixed top-5 right-5 z-50 hidden items-center gap-3 px-4 py-3 rounded-lg shadow-lg border-2 transition-all duration-300">
+    <span id="notifIcon" class="animate-ping-slow"></span>
+    <span id="notifText" class="font-medium text-sm"></span>
+  </div>
+
+  <!-- Suara -->
+  <audio id="successSound" src="https://assets.mixkit.co/sfx/preview/mixkit-correct-answer-reward-952.mp3"></audio>
+  <audio id="errorSound"
+    src="https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3"></audio>
+
+  <script>
+    VanillaTilt.init(document.querySelector("#loginCard"), {
+      max: 10,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.2
+    });
+
+    function showNotif(success, message) {
+      const notif = document.getElementById("notif");
+      const icon = document.getElementById("notifIcon");
+      const text = document.getElementById("notifText");
+
+      notif.classList.remove("hidden", "notif-hide");
+      notif.classList.add("notif-show");
+
+      notif.classList.remove("border-red-400", "border-green-400", "bg-red-100", "bg-green-100", "text-red-600", "text-green-600", "shadow-red-300", "shadow-green-300");
+
+      if (success) {
+        notif.classList.add("border-green-400", "bg-green-100", "text-green-600", "shadow-green-300");
+        icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 animate-ping-slow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>`;
+        document.getElementById("successSound").play();
+      } else {
+        notif.classList.add("border-red-400", "bg-red-100", "text-red-600", "shadow-red-300");
+        icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600 animate-ping-slow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>`;
+        document.getElementById("errorSound").play();
+      }
+
+      text.textContent = message;
+
+      setTimeout(() => {
+        notif.classList.remove("notif-show");
+        notif.classList.add("notif-hide");
+        setTimeout(() => notif.classList.add("hidden"), 400);
+      }, 3000);
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const email = this.email.value.trim();
+      const password = this.password.value.trim();
+      const users = JSON.parse(localStorage.getItem("users") || "[]");
+      const match = users.find(u => u.email === email && u.password === password);
+
+      const loginButton = document.getElementById("loginButton");
+      const loginText = document.getElementById("loginBtnText");
+      const spinner = document.getElementById("loginSpinner");
+
+      // Tampilkan spinner dan disable tombol
+      loginButton.disabled = true;
+      spinner.classList.remove("hidden");
+      loginText.textContent = "Memproses...";
+
+      setTimeout(() => {
+        if (match) {
+          showNotif(true, "Login berhasil!");
+
+          setTimeout(() => {
+            window.location.href = "../main/dashboard.html";
+          }, 1600); // Redirect setelah notifikasi tampil
+        } else {
+          showNotif(false, "Username atau password salah!");
+        }
+
+        loginButton.disabled = false;
+        spinner.classList.add("hidden");
+        loginText.textContent = "Masuk";
+      }, 1500);
+    });
+  </script>
+</body>
+
+</html>

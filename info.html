@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Info - AI Preneur Academy</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4712/4712100.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body
+  class="bg-gradient-to-r from-blue-500 to-indigo-600 text-gray-100 min-h-screen font-sans flex items-start justify-center">
+  <div class="max-w-7xl mx-auto p-4 grid grid-cols-1 md:grid-cols-4 gap-6">
+
+    <!-- Sidebar Filter -->
+    <aside
+      class="md:col-span-1 bg-white/80 border border-white/30 rounded-lg shadow-lg p-6 space-y-8 text-gray-800 backdrop-blur">
+      <h1 class="text-2xl font-bold border-b pb-2 mb-4">Filter</h1>
+
+      <div>
+        <h2 class="text-lg font-semibold mb-3">Ratings</h2>
+        <div class="space-y-3">
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input type="radio" name="rating" value="4.5" class="rating-filter" />
+            <span>⭐ 4.5 & up</span>
+          </label>
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input type="radio" name="rating" value="4.0" class="rating-filter" />
+            <span>⭐ 4.0 & up</span>
+          </label>
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input type="radio" name="rating" value="3.5" class="rating-filter" />
+            <span>⭐ 3.5 & up</span>
+          </label>
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input type="radio" name="rating" value="3.0" class="rating-filter" />
+            <span>⭐ 3.0 & up</span>
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-semibold mb-3">Video Duration</h2>
+        <div class="space-y-3">
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input type="checkbox" value="0-1" class="duration-filter" />
+            <span>0–1 Hour</span>
+          </label>
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input type="checkbox" value="1-3" class="duration-filter" />
+            <span>1–3 Hours</span>
+          </label>
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input type="checkbox" value="3-6" class="duration-filter" />
+            <span>3–6 Hours</span>
+          </label>
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input type="checkbox" value="6-17" class="duration-filter" />
+            <span>6–17 Hours</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="bg-indigo-100/80 p-4 rounded border border-indigo-200">
+        <h3 class="font-semibold mb-2">Selected Filters:</h3>
+        <p><strong>Rating:</strong> <span id="selected-rating">None</span></p>
+        <p><strong>Duration:</strong> <span id="selected-duration">None</span></p>
+      </div>
+    </aside>
+
+    <!-- Course Cards -->
+    <main class="md:col-span-3 grid grid-cols-1 gap-6" id="course-list">
+
+      <!-- Loop of Courses -->
+      <div class="course bg-white/80 backdrop-blur border border-white/30 rounded-lg p-4 flex items-center gap-4 shadow-md"
+        data-rating="4.6" data-duration="16.5">
+        <img src="https://source.unsplash.com/random/200x120?sig=1" class="w-48 h-28 object-cover rounded" />
+        <div class="flex-1 text-gray-800">
+          <h2 class="text-lg font-semibold mb-1">Azure Machine Learning 2025</h2>
+          <p class="text-sm text-gray-600">Master ML with Azure ML Studio. No-code & Python.</p>
+          <p class="text-sm text-yellow-600 mt-1">★ 4.6 · 16.5 hours · Expert</p>
+          <div class="mt-2 flex items-center justify-between">
+            <span class="bg-indigo-100 text-indigo-700 text-xs px-2 py-1 rounded">Bestseller</span>
+            <div class="text-right">
+              <p class="text-lg font-bold text-indigo-700">Rp139,000</p>
+              <p class="text-sm line-through text-gray-500">Rp289,000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="course bg-white/80 backdrop-blur border border-white/30 rounded-lg p-4 flex items-center gap-4 shadow-md"
+        data-rating="4.8" data-duration="12">
+        <img src="https://source.unsplash.com/random/200x120?sig=2" class="w-48 h-28 object-cover rounded" />
+        <div class="flex-1 text-gray-800">
+          <h2 class="text-lg font-semibold mb-1">React JS Masterclass</h2>
+          <p class="text-sm text-gray-600">Build real-world apps with React 18 & Tailwind.</p>
+          <p class="text-sm text-yellow-600 mt-1">★ 4.8 · 12 hours · Intermediate</p>
+          <div class="mt-2 flex items-center justify-between">
+            <span class="bg-indigo-100 text-indigo-700 text-xs px-2 py-1 rounded">Popular</span>
+            <div class="text-right">
+              <p class="text-lg font-bold text-indigo-700">Rp159,000</p>
+              <p class="text-sm line-through text-gray-500">Rp299,000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="course bg-white/80 backdrop-blur border border-white/30 rounded-lg p-4 flex items-center gap-4 shadow-md"
+        data-rating="4.3" data-duration="4.5">
+        <img src="https://source.unsplash.com/random/200x120?sig=3" class="w-48 h-28 object-cover rounded" />
+        <div class="flex-1 text-gray-800">
+          <h2 class="text-lg font-semibold mb-1">UI/UX Design Fundamentals</h2>
+          <p class="text-sm text-gray-600">Learn Figma, wireframes, and design thinking.</p>
+          <p class="text-sm text-yellow-600 mt-1">★ 4.3 · 4.5 hours · Beginner</p>
+          <div class="mt-2 flex items-center justify-between">
+            <span class="bg-indigo-100 text-indigo-700 text-xs px-2 py-1 rounded">New</span>
+            <div class="text-right">
+              <p class="text-lg font-bold text-indigo-700">Rp89,000</p>
+              <p class="text-sm line-through text-gray-500">Rp199,000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="course bg-white/80 backdrop-blur border border-white/30 rounded-lg p-4 flex items-center gap-4 shadow-md"
+        data-rating="4.1" data-duration="2">
+        <img src="https://source.unsplash.com/random/200x120?sig=4" class="w-48 h-28 object-cover rounded" />
+        <div class="flex-1 text-gray-800">
+          <h2 class="text-lg font-semibold mb-1">Git & GitHub for Teams</h2>
+          <p class="text-sm text-gray-600">Track code like a pro with Git basics and branching.</p>
+          <p class="text-sm text-yellow-600 mt-1">★ 4.1 · 2 hours · All Levels</p>
+          <div class="mt-2 flex items-center justify-between">
+            <span class="bg-indigo-100 text-indigo-700 text-xs px-2 py-1 rounded">Staff Pick</span>
+            <div class="text-right">
+              <p class="text-lg font-bold text-indigo-700">Rp49,000</p>
+              <p class="text-sm line-through text-gray-500">Rp129,000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="course bg-white/80 backdrop-blur border border-white/30 rounded-lg p-4 flex items-center gap-4 shadow-md"
+        data-rating="3.9" data-duration="6.5">
+        <img src="https://source.unsplash.com/random/200x120?sig=5" class="w-48 h-28 object-cover rounded" />
+        <div class="flex-1 text-gray-800">
+          <h2 class="text-lg font-semibold mb-1">Python for Data Science</h2>
+          <p class="text-sm text-gray-600">Pandas, NumPy, data cleaning & analysis projects.</p>
+          <p class="text-sm text-yellow-600 mt-1">★ 3.9 · 6.5 hours · Intermediate</p>
+          <div class="mt-2 flex items-center justify-between">
+            <span class="bg-indigo-100 text-indigo-700 text-xs px-2 py-1 rounded">Student Favorite</span>
+            <div class="text-right">
+              <p class="text-lg font-bold text-indigo-700">Rp109,000</p>
+              <p class="text-sm line-through text-gray-500">Rp219,000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="course bg-white/80 backdrop-blur border border-white/30 rounded-lg p-4 flex items-center gap-4 shadow-md"
+        data-rating="4.7" data-duration="10">
+        <img src="https://source.unsplash.com/random/200x120?sig=6" class="w-48 h-28 object-cover rounded" />
+        <div class="flex-1 text-gray-800">
+          <h2 class="text-lg font-semibold mb-1">Full Stack Web Dev 2025</h2>
+          <p class="text-sm text-gray-600">Learn HTML, CSS, JS, Node.js, MongoDB.</p>
+          <p class="text-sm text-yellow-600 mt-1">★ 4.7 · 10 hours · Advanced</p>
+          <div class="mt-2 flex items-center justify-between">
+            <span class="bg-indigo-100 text-indigo-700 text-xs px-2 py-1 rounded">Top Rated</span>
+            <div class="text-right">
+              <p class="text-lg font-bold text-indigo-700">Rp199,000</p>
+              <p class="text-sm line-through text-gray-500">Rp349,000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Script Filter Logic -->
+  <script>
+    const ratingInputs = document.querySelectorAll('.rating-filter');
+    const durationInputs = document.querySelectorAll('.duration-filter');
+    const selectedRating = document.getElementById('selected-rating');
+    const selectedDuration = document.getElementById('selected-duration');
+    const courses = document.querySelectorAll('.course');
+
+    function filterCourses() {
+      const selectedRatingValue = [...ratingInputs].find(i => i.checked)?.value || null;
+      selectedRating.textContent = selectedRatingValue ? `${selectedRatingValue} & up` : "None";
+
+      const selectedDurations = [...durationInputs].filter(i => i.checked).map(i => i.value);
+      selectedDuration.textContent = selectedDurations.length ? selectedDurations.join(', ') + " Hours" : "None";
+
+      courses.forEach(course => {
+        const courseRating = parseFloat(course.dataset.rating);
+        const courseDuration = parseFloat(course.dataset.duration);
+
+        const ratingMatch = !selectedRatingValue || courseRating >= parseFloat(selectedRatingValue);
+        const durationMatch = selectedDurations.length === 0 ||
+          selectedDurations.some(range => {
+            const [min, max] = range.split('-').map(Number);
+            return courseDuration >= min && courseDuration <= max;
+          });
+
+        if (ratingMatch && durationMatch) {
+          course.classList.remove('hidden');
+        } else {
+          course.classList.add('hidden');
+        }
+      });
+    }
+
+    ratingInputs.forEach(i => i.addEventListener('change', filterCourses));
+    durationInputs.forEach(i => i.addEventListener('change', filterCourses));
+
+    document.addEventListener('DOMContentLoaded', () => {
+      filterCourses();
+    });
+  </script>
+</body>
+
+</html>

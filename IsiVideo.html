@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Isi Video</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in-up {
+      animation: fadeInUp 0.5s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 p-6">
+  <div class="fade-in-up">
+    <!-- Tombol Kembali -->
+    <div class="mb-6">
+      <a href="#" onclick="parent.loadPage('AiVideo.html', this); return false;"
+        class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full shadow hover:bg-blue-200 transition-all duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        <span>Back</span>
+      </a>
+
+    </div>
+
+
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-blue-600" id="judulKategori">Kategori: ...</h1>
+      <p class="text-gray-600 mt-2">Berikut adalah video edukasi sesuai topik pilihanmu.</p>
+    </div>
+
+    <!-- Grid Video -->
+    <div id="videoContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Video cards akan di-generate -->
+    </div>
+
+    <script>
+      // Ambil & decode kategori dari URL
+      const kategori = decodeURIComponent(new URLSearchParams(window.location.search).get("kategori") || "");
+
+      // Update judul halaman
+      document.getElementById("judulKategori").textContent = `Kategori: ${kategori}`;
+
+      // Data video berdasarkan kategori
+      const videos = {
+        "Pengembangan Bisnis": [
+          { title: "Skalakan Bisnis Anda", url: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+          { title: "Mengukur Potensi Usaha", url: "https://www.youtube.com/embed/ysz5S6PUM-U" },
+          { title: "Inovasi Produk", url: "https://www.youtube.com/embed/5qap5aO4i9A" },
+          { title: "Inovasi Produk", url: "https://www.youtube.com/embed/5qap5aO4i9A" },
+          { title: "Strategi Ekspansi", url: "https://www.youtube.com/embed/JGwWNGJdvx8" },
+          { title: "Membangun Jaringan", url: "https://www.youtube.com/embed/hTWKbfoikeg" },
+        ],
+        "Mengembalikan Modal": [
+          { title: "Break Even Point", url: "https://www.youtube.com/embed/tgbNymZ7vqY" },
+          { title: "ROI dan Payback Period", url: "https://www.youtube.com/embed/kJQP7kiw5Fk" },
+          { title: "Tips Menghemat Biaya", url: "https://www.youtube.com/embed/aqz-KE-bpKQ" },
+          { title: "Break Even Point", url: "https://www.youtube.com/embed/tgbNymZ7vqY" },
+          { title: "ROI dan Payback Period", url: "https://www.youtube.com/embed/kJQP7kiw5Fk" },
+          { title: "Tips Menghemat Biaya", url: "https://www.youtube.com/embed/aqz-KE-bpKQ" },
+        ],
+        "Manajemen Keuangan": [
+          { title: "Laporan Keuangan UMKM", url: "https://www.youtube.com/embed/ScMzIvxBSi4" },
+          { title: "Cashflow Management", url: "https://www.youtube.com/embed/w7ejDZ8SWv8" },
+          { title: "Keuangan Pribadi vs Usaha", url: "https://www.youtube.com/embed/DLX62G4lc44" },
+          { title: "Laporan Keuangan UMKM", url: "https://www.youtube.com/embed/ScMzIvxBSi4" },
+          { title: "Cashflow Management", url: "https://www.youtube.com/embed/w7ejDZ8SWv8" },
+          { title: "Keuangan Pribadi vs Usaha", url: "https://www.youtube.com/embed/DLX62G4lc44" },
+        ],
+        "Strategi Pemasaran": [
+          { title: "Social Media Marketing", url: "https://www.youtube.com/embed/hTWKbfoikeg" },
+          { title: "Brand Activation", url: "https://www.youtube.com/embed/JGwWNGJdvx8" },
+          { title: "Kampanye Digital", url: "https://www.youtube.com/embed/1wZw7RvjbO0" },
+          { title: "Social Media Marketing", url: "https://www.youtube.com/embed/hTWKbfoikeg" },
+          { title: "Brand Activation", url: "https://www.youtube.com/embed/JGwWNGJdvx8" },
+          { title: "Kampanye Digital", url: "https://www.youtube.com/embed/1wZw7RvjbO0" },
+        ],
+        "Riset Pasar": [
+          { title: "Riset Kompetitor", url: "https://www.youtube.com/embed/ScMzIvxBSi4" },
+          { title: "Survey Pelanggan", url: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+          { title: "Analisa Produk", url: "https://www.youtube.com/embed/ysz5S6PUM-U" },
+          { title: "Riset Kompetitor", url: "https://www.youtube.com/embed/ScMzIvxBSi4" },
+          { title: "Survey Pelanggan", url: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+          { title: "Analisa Produk", url: "https://www.youtube.com/embed/ysz5S6PUM-U" },
+        ],
+        "Legalitas Usaha": [
+          { title: "Cara Daftar UMKM", url: "https://www.youtube.com/embed/DLX62G4lc44" },
+          { title: "NPWP dan NIB", url: "https://www.youtube.com/embed/tgbNymZ7vqY" },
+          { title: "Legalitas Online Shop", url: "https://www.youtube.com/embed/aqz-KE-bpKQ" },
+          { title: "Cara Daftar UMKM", url: "https://www.youtube.com/embed/DLX62G4lc44" },
+          { title: "NPWP dan NIB", url: "https://www.youtube.com/embed/tgbNymZ7vqY" },
+          { title: "Legalitas Online Shop", url: "https://www.youtube.com/embed/aqz-KE-bpKQ" },
+        ],
+        "Branding": [
+          { title: "Membangun Identitas Brand", url: "https://www.youtube.com/embed/kJQP7kiw5Fk" },
+          { title: "Logo dan Visual", url: "https://www.youtube.com/embed/5qap5aO4i9A" },
+          { title: "Storytelling untuk Brand", url: "https://www.youtube.com/embed/ysz5S6PUM-U" },
+          { title: "Membangun Identitas Brand", url: "https://www.youtube.com/embed/kJQP7kiw5Fk" },
+          { title: "Logo dan Visual", url: "https://www.youtube.com/embed/5qap5aO4i9A" },
+          { title: "Storytelling untuk Brand", url: "https://www.youtube.com/embed/ysz5S6PUM-U" },
+        ],
+        "Pitching ke Investor": [
+          { title: "Bikin Pitch Deck", url: "https://www.youtube.com/embed/hTWKbfoikeg" },
+          { title: "Simulasi Pitching", url: "https://www.youtube.com/embed/ScMzIvxBSi4" },
+          { title: "Investor Mindset", url: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+          { title: "Bikin Pitch Deck", url: "https://www.youtube.com/embed/hTWKbfoikeg" },
+          { title: "Simulasi Pitching", url: "https://www.youtube.com/embed/ScMzIvxBSi4" },
+          { title: "Investor Mindset", url: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+        ],
+        "Operasional Usaha": [
+          { title: "SOP Bisnis Kecil", url: "https://www.youtube.com/embed/ysz5S6PUM-U" },
+          { title: "Manajemen Tim", url: "https://www.youtube.com/embed/5qap5aO4i9A" },
+          { title: "Monitoring Harian", url: "https://www.youtube.com/embed/JGwWNGJdvx8" },
+          { title: "SOP Bisnis Kecil", url: "https://www.youtube.com/embed/ysz5S6PUM-U" },
+          { title: "Manajemen Tim", url: "https://www.youtube.com/embed/5qap5aO4i9A" },
+          { title: "Monitoring Harian", url: "https://www.youtube.com/embed/JGwWNGJdvx8" },
+        ],
+      };
+
+      // Ambil list video sesuai kategori
+      const daftar = videos[kategori] || [];
+      const container = document.getElementById("videoContainer");
+
+      if (daftar.length === 0) {
+        container.innerHTML = `<p class="col-span-3 text-center text-red-500">Belum ada video untuk kategori ini.</p>`;
+      } else {
+        daftar.forEach(video => {
+          const card = document.createElement("div");
+          card.className = "bg-gray-100 rounded-xl shadow hover:shadow-lg transition overflow-hidden";
+          card.innerHTML = `
+            <div class="relative w-full h-0 pb-[56.25%] overflow-hidden">
+              <iframe class="absolute top-0 left-0 w-full h-full" src="${video.url}" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-700">${video.title}</h3>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      }
+    </script>
+  </div>
+</body>
+
+</html>

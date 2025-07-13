@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Profile Fullscreen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 via-white to-blue-100 min-h-screen flex flex-col justify-between font-sans">
+
+  <!-- Konten Utama -->
+  <div class="w-full px-6 py-10">
+    <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-2xl p-8">
+      <div class="flex justify-between items-start flex-wrap gap-4">
+        <!-- Left Section -->
+        <div class="flex items-start gap-6">
+          <img src="../image/Kura.jpg" alt="Profile" class="w-28 h-28 rounded-xl object-cover shadow-md" />
+          <div>
+            <h2 class="text-3xl font-bold text-gray-800">Sultan Muhammad Adji Pratama</h2>
+            <p class="text-sm text-blue-600">Product Designer</p>
+            <p class="text-sm text-gray-500">Jawa Timur, Kota Malang</p>
+            <div class="flex items-center mt-3 space-x-2">
+              <p class="text-lg font-bold text-gray-700">7,6</p>
+              <div class="text-yellow-400 text-sm">★★★★★</div>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm shadow-md">✉️ Send message</button>
+              <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm shadow-md">✅ Contacts</button>
+              <button class="text-red-500 hover:underline text-sm">🚩Report user</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bookmark -->
+        <p class="text-sm text-gray-400 self-start">🔖 Bookmark</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="mt-8 border-b border-gray-200">
+        <nav class="flex space-x-6">
+          <button id="tab-timeline" class="pb-2 border-b-2 border-transparent hover:border-blue-500 text-gray-500 transition-all">Timeline</button>
+          <button id="tab-about" class="pb-2 border-b-2 border-blue-600 text-blue-600 font-semibold transition-all">About</button>
+        </nav>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="relative overflow-hidden mt-6 h-[350px]">
+        <div id="tab-contents" class="flex transition-transform duration-500 w-[200%]">
+
+          <!-- Timeline -->
+          <div class="w-full pr-6">
+            <h3 class="text-xl font-semibold mb-4 text-gray-800">Recent Activities</h3>
+            <ul class="space-y-3 text-sm text-gray-700 list-disc list-inside">
+              <li>🎓 Mengikuti Pelatihan Dasar Product Design: Thinking & Process - Juli 10</li>
+              <li>📐 Mengerjakan Tugas: Redesign Aplikasi UMKM Lokal - Juli 9</li>
+              <li>💡 Sesi Mentoring: "Design Thinking untuk Solusi Inovatif" - Juli 8</li>
+              <li>🧠 Menyelesaikan Modul "UI/UX Fundamentals for Beginners" - Juli 7</li>
+              <li>🎙️ Webinar: "Tren Product Design 2025 bersama Praktisi Industri" - Juli 6</li>
+              <li>🔍 Studi Kasus: Analisis UX dari Aplikasi E-Commerce Populer - Juli 5</li>
+              <li>🏆 Lulus Sertifikasi Internal: Product Design Level Dasar - Juli 4</li>
+            </ul>
+          </div>
+
+          <!-- About -->
+          <div class="w-full pl-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <!-- Work & Skills -->
+              <div>
+                <h3 class="text-lg font-semibold mb-2 text-gray-800">Work</h3>
+                <div class="mb-3">
+                  <p class="font-semibold text-gray-700">AI Preneur Academy - Malang <span class="text-xs bg-blue-100 text-blue-600 px-2 py-0.5 rounded">Primary</span></p>
+                  <p class="text-sm text-gray-500">Jl. L.A Sucipto, Blimbing<br />Malang, Jawa Timur 65139</p>
+                </div>
+                <div class="mb-4">
+                  <p class="font-semibold text-gray-700">Kreatif Digital Studio - Jakarta <span class="text-xs bg-gray-200 text-gray-700 px-2 py-0.5 rounded">Freelance</span></p>
+                  <p class="text-sm text-gray-500">Jl. Jend. Sudirman No. 52<br />Jakarta Pusat, DKI Jakarta 10210</p>
+                </div>
+
+                <h3 class="text-lg font-semibold mb-1 text-gray-800">Skills</h3>
+                <ul class="text-sm text-gray-700 list-disc list-inside">
+                  <li>UI/UX Design</li>
+                  <li>Product Design</li>
+                  <li>Design Thinking</li>
+                  <li>Figma & Prototyping</li>
+                  <li>AI Tools for Creative Work</li>
+                </ul>
+              </div>
+
+              <!-- Contact Info -->
+              <div>
+                <h3 class="text-lg font-semibold mb-2 text-gray-800">Contact Information</h3>
+                <p class="text-sm"><span class="font-semibold">Phone:</span> <a href="tel:+6281234567890" class="text-blue-600 hover:underline">+62 812 3456 7890</a></p>
+                <p class="text-sm"><span class="font-semibold">Address:</span><br />Jl. Danau Toba No. 10<br />Malang, Jawa Timur 65139</p>
+                <p class="text-sm"><span class="font-semibold">E-mail:</span> <a href="mailto:sulthan.id@aipreneur.academy" class="text-blue-600 hover:underline">sulthan.id@aipreneur.academy</a></p>
+                <p class="text-sm"><span class="font-semibold">Site:</span> <a href="https://aipreneur.academy" target="_blank" class="text-blue-600 hover:underline">www.aipreneur.academy</a></p>
+
+                <h3 class="text-lg font-semibold mt-4 text-gray-800">Basic Information</h3>
+                <p class="text-sm"><span class="font-semibold">Birthday:</span> 5 Juni 2008</p>
+                <p class="text-sm"><span class="font-semibold">Gender:</span> Laki-laki</p>
+                <p class="text-sm"><span class="font-semibold">Hobby:</span> Bulutangkis</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tombol Back to Home (Tengah) -->
+  <div class="w-full pb-10 flex justify-center">
+    <a href="http://127.0.0.1:5500/main/dashboard.html#"
+      class="bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-700 transition-all text-sm flex items-center gap-2">
+      <span>←</span> Back to Home
+    </a>
+  </div>
+
+  <!-- Script Tab -->
+  <script>
+    const tabTimeline = document.getElementById("tab-timeline");
+    const tabAbout = document.getElementById("tab-about");
+    const tabContents = document.getElementById("tab-contents");
+
+    tabTimeline.addEventListener("click", () => {
+      tabContents.style.transform = "translateX(0%)";
+      tabTimeline.classList.add("border-blue-500", "text-blue-600", "font-semibold");
+      tabTimeline.classList.remove("text-gray-500");
+      tabAbout.classList.remove("border-blue-500", "text-blue-600", "font-semibold");
+      tabAbout.classList.add("text-gray-500");
+    });
+
+    tabAbout.addEventListener("click", () => {
+      tabContents.style.transform = "translateX(-50%)";
+      tabAbout.classList.add("border-blue-500", "text-blue-600", "font-semibold");
+      tabAbout.classList.remove("text-gray-500");
+      tabTimeline.classList.remove("border-blue-500", "text-blue-600", "font-semibold");
+      tabTimeline.classList.add("text-gray-500");
+    });
+  </script>
+</body>
+
+</html>

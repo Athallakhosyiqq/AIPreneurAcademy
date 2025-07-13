@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pilih Kategori Video</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-white p-6">
+  <div class="fade-in-up">
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-blue-600 animate-pulse">
+        Hi, Hari ini mau ngembangin skill apaa? 🚀
+      </h1>
+      <p class="text-gray-600 mt-2">Pilih skill wirausaha yang ingin kamu pelajari!</p>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="flex justify-center mb-6">
+      <input id="searchInput" type="text" placeholder="Cari kategori..."
+        class="w-full max-w-md px-4 py-2 border rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-400" />
+    </div>
+
+    <!-- Grid Kategori -->
+    <div id="categoryGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <a href="IsiVideo.html?kategori=Pengembangan%20Bisnis" class="category-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition block" data-name="Pengembangan Bisnis">
+        <div class="flex items-center gap-3 mb-2">
+          <i data-lucide="bar-chart-4" class="w-6 h-6 text-blue-600"></i>
+          <h2 class="text-lg font-semibold">Pengembangan Bisnis</h2>
+        </div>
+        <p class="text-gray-600 text-sm">Strategi memperluas usaha dan pasar.</p>
+      </a>
+
+      <a href="IsiVideo.html?kategori=Mengembalikan%20Modal" class="category-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition block" data-name="Mengembalikan Modal">
+        <div class="flex items-center gap-3 mb-2">
+          <i data-lucide="dollar-sign" class="w-6 h-6 text-green-600"></i>
+          <h2 class="text-lg font-semibold">Mengembalikan Modal</h2>
+        </div>
+        <p class="text-gray-600 text-sm">Strategi memulihkan investasi awal.</p>
+      </a>
+
+      <a href="IsiVideo.html?kategori=Manajemen%20Keuangan" class="category-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition block" data-name="Manajemen Keuangan">
+        <div class="flex items-center gap-3 mb-2">
+          <i data-lucide="wallet" class="w-6 h-6 text-red-600"></i>
+          <h2 class="text-lg font-semibold">Manajemen Keuangan</h2>
+        </div>
+        <p class="text-gray-600 text-sm">Kelola keuangan usaha secara efisien.</p>
+      </a>
+
+      <a href="IsiVideo.html?kategori=Strategi%20Pemasaran" class="category-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition block" data-name="Strategi Pemasaran">
+        <div class="flex items-center gap-3 mb-2">
+          <i data-lucide="megaphone" class="w-6 h-6 text-purple-600"></i>
+          <h2 class="text-lg font-semibold">Strategi Pemasaran</h2>
+        </div>
+        <p class="text-gray-600 text-sm">Promosi produk dan jasa secara efektif.</p>
+      </a>
+
+      <a href="IsiVideo.html?kategori=Riset%20Pasar" class="category-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition block" data-name="Riset Pasar">
+        <div class="flex items-center gap-3 mb-2">
+          <i data-lucide="search" class="w-6 h-6 text-yellow-600"></i>
+          <h2 class="text-lg font-semibold">Riset Pasar</h2>
+        </div>
+        <p class="text-gray-600 text-sm">Kenali kebutuhan dan tren konsumen.</p>
+      </a>
+
+      <a href="IsiVideo.html?kategori=Legalitas%20Usaha" class="category-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition block" data-name="Legalitas Usaha">
+        <div class="flex items-center gap-3 mb-2">
+          <i data-lucide="file-text" class="w-6 h-6 text-indigo-600"></i>
+          <h2 class="text-lg font-semibold">Legalitas Usaha</h2>
+        </div>
+        <p class="text-gray-600 text-sm">Lengkapi perizinan dan dokumen hukum.</p>
+      </a>
+
+      <a href="IsiVideo.html?kategori=Branding" class="category-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition block" data-name="Branding">
+        <div class="flex items-center gap-3 mb-2">
+          <i data-lucide="palette" class="w-6 h-6 text-pink-600"></i>
+          <h2 class="text-lg font-semibold">Branding</h2>
+        </div>
+        <p class="text-gray-600 text-sm">Ciptakan identitas brand yang kuat.</p>
+      </a>
+
+      <a href="IsiVideo.html?kategori=Pitching%20ke%20Investor" class="category-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition block" data-name="Pitching ke Investor">
+        <div class="flex items-center gap-3 mb-2">
+          <i data-lucide="presentation" class="w-6 h-6 text-teal-600"></i>
+          <h2 class="text-lg font-semibold">Pitching ke Investor</h2>
+        </div>
+        <p class="text-gray-600 text-sm">Meyakinkan calon investor dengan presentasi.</p>
+      </a>
+
+      <a href="IsiVideo.html?kategori=Operasional%20Usaha" class="category-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition block" data-name="Operasional Usaha">
+        <div class="flex items-center gap-3 mb-2">
+          <i data-lucide="settings" class="w-6 h-6 text-orange-600"></i>
+          <h2 class="text-lg font-semibold">Operasional Usaha</h2>
+        </div>
+        <p class="text-gray-600 text-sm">Optimalkan aktivitas harian bisnis.</p>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function filterCategories() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.category-card');
+      cards.forEach(card => {
+        const name = card.getAttribute('data-name').toLowerCase();
+        if (name.includes(input)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    document.getElementById('searchInput').addEventListener('input', filterCategories);
+
+    window.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

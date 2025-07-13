@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leaderboard - AI Preneur Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <div class="min-h-screen p-6 flex flex-col items-center">
+    <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">🏆 Leaderboard AI Preneur - Statistik Usaha</h1>
+
+    <!-- Top 3 Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 w-full max-w-5xl">
+      <div class="bg-white p-4 rounded-xl shadow-lg border border-yellow-400">
+        <div class="flex items-center justify-center mb-2">
+          <img src="https://i.pravatar.cc/100?img=1" class="w-10 h-10 rounded-full mr-2" alt="Ari" />
+          <span class="text-yellow-600 text-2xl font-bold">🥇 Ari Pranoto</span>
+        </div>
+        <div class="text-center text-sm text-gray-600">Profit: Rp12.000.000</div>
+        <div class="text-center text-gray-500 mt-2">Bidang: Kuliner</div>
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow-lg border border-gray-300">
+        <div class="flex items-center justify-center mb-2">
+          <img src="https://i.pravatar.cc/100?img=2" class="w-10 h-10 rounded-full mr-2" alt="Rina" />
+          <span class="text-gray-700 text-2xl font-bold">🥈 Rina Safitri</span>
+        </div>
+        <div class="text-center text-sm text-gray-600">Profit: Rp10.500.000</div>
+        <div class="text-center text-gray-500 mt-2">Bidang: Fashion</div>
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow-lg border border-orange-400">
+        <div class="flex items-center justify-center mb-2">
+          <img src="https://i.pravatar.cc/100?img=3" class="w-10 h-10 rounded-full mr-2" alt="Budi" />
+          <span class="text-orange-500 text-2xl font-bold">🥉 Budi Santoso</span>
+        </div>
+        <div class="text-center text-sm text-gray-600">Profit: Rp9.800.000</div>
+        <div class="text-center text-gray-500 mt-2">Bidang: Jasa Digital</div>
+      </div>
+    </div>
+
+    <!-- Leaderboard Table -->
+    <div class="w-full max-w-5xl bg-white rounded-xl shadow-lg overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="min-w-full text-left text-sm text-gray-700">
+          <thead class="bg-gray-200 text-gray-800 uppercase text-xs">
+            <tr>
+              <th class="px-4 py-3">No</th>
+              <th class="px-4 py-3">Nama</th>
+              <th class="px-4 py-3">Profit Usaha</th>
+              <th class="px-4 py-3">Pemakaian Aplikasi</th>
+              <th class="px-4 py-3">Bidang Usaha</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-300">
+            <!-- Peringkat 4–15 -->
+            <tr class="hover:bg-gray-100 transition">
+              <td class="px-4 py-2">4</td>
+              <td class="px-4 py-2 flex items-center gap-2"><img src="https://i.pravatar.cc/100?img=4" class="w-8 h-8 rounded-full" />Siti Aminah</td>
+              <td class="px-4 py-2">Rp9.200.000</td>
+              <td class="px-4 py-2">3.1 Tahun</td>
+              <td class="px-4 py-2">Makanan Ringan</td>
+            </tr>
+            <tr class="hover:bg-gray-100 transition">
+              <td class="px-4 py-2">5</td>
+              <td class="px-4 py-2 flex items-center gap-2"><img src="https://i.pravatar.cc/100?img=5" class="w-8 h-8 rounded-full" />Wahyu Nugroho</td>
+              <td class="px-4 py-2">Rp8.700.000</td>
+              <td class="px-4 py-2">2.5 Tahun</td>
+              <td class="px-4 py-2">Percetakan</td>
+            </tr>
+            <tr class="hover:bg-gray-100 transition">
+              <td class="px-4 py-2">6</td>
+              <td class="px-4 py-2 flex items-center gap-2"><img src="https://i.pravatar.cc/100?img=6" class="w-8 h-8 rounded-full" />Lisa Marlina</td>
+              <td class="px-4 py-2">Rp8.500.000</td>
+              <td class="px-4 py-2">1.8 Tahun</td>
+              <td class="px-4 py-2">Desain Grafis</td>
+            </tr>
+            <tr class="hover:bg-gray-100 transition">
+              <td class="px-4 py-2">7</td>
+              <td class="px-4 py-2 flex items-center gap-2"><img src="https://i.pravatar.cc/100?img=7" class="w-8 h-8 rounded-full" />Indra Maulana</td>
+              <td class="px-4 py-2">Rp8.000.000</td>
+              <td class="px-4 py-2">2.2 Tahun</td>
+              <td class="px-4 py-2">Aplikasi Edukasi</td>
+            </tr>
+            <tr class="hover:bg-gray-100 transition">
+              <td class="px-4 py-2">8</td>
+              <td class="px-4 py-2 flex items-center gap-2"><img src="https://i.pravatar.cc/100?img=8" class="w-8 h-8 rounded-full" />Dina Kusuma</td>
+              <td class="px-4 py-2">Rp7.900.000</td>
+              <td class="px-4 py-2">2.6 Tahun</td>
+              <td class="px-4 py-2">Kecantikan</td>
+            </tr>
+            <tr class="hover:bg-gray-100 transition">
+              <td class="px-4 py-2">9</td>
+              <td class="px-4 py-2 flex items-center gap-2"><img src="https://i.pravatar.cc/100?img=9" class="w-8 h-8 rounded-full" />Fahmi Ramadhan</td>
+              <td class="px-4 py-2">Rp7.800.000</td>
+              <td class="px-4 py-2">1.9 Tahun</td>
+              <td class="px-4 py-2">Jasa Fotografi</td>
+            </tr>
+            <tr class="hover:bg-gray-100 transition">
+              <td class="px-4 py-2">10</td>
+              <td class="px-4 py-2 flex items-center gap-2"><img src="https://i.pravatar.cc/100?img=10" class="w-8 h-8 rounded-full" />Nur Aisyah</td>
+              <td class="px-4 py-2">Rp7.700.000</td>
+              <td class="px-4 py-2">1.5 Tahun</td>
+              <td class="px-4 py-2">Pembuatan Web</td>
+            </tr>
+            <tr class="hover:bg-gray-100 transition">
+              <td class="px-4 py-2">11</td>
+              <td class="px-4 py-2 flex items-center gap-2"><img src="https://i.pravatar.cc/100?img=11" class="w-8 h-8 rounded-full" />Galih Prasetya</td>
+              <td class="px-4 py-2">Rp7.500.000</td>
+              <td class="px-4 py-2">1.2 Tahun</td>
+              <td class="px-4 py-2">Multimedia</td>
+            </tr>
+            <tr class="hover:bg-gray-100 transition">
+              <td class="px-4 py-2">12</td>
+              <td class="px-4 py-2 flex items-center gap-2"><img src="https://i.pravatar.cc/100?img=12" class="w-8 h-8 rounded-full" />Tania Nurhaliza</td>
+              <td class="px-4 py-2">Rp7.300.000</td>
+              <td class="px-4 py-2">1.0 Tahun</td>
+              <td class="px-4 py-2">Kopi & Minuman</td>
+            </tr>
+            <tr class="hover:bg-gray-100 transition">
+              <td class="px-4 py-2">13</td>
+              <td class="px-4 py-2 flex items-center gap-2"><img src="https://i.pravatar.cc/100?img=13" class="w-8 h-8 rounded-full" />Yusuf Alwi</td>
+              <td class="px-4 py-2">Rp7.100.000</td>
+              <td class="px-4 py-2">0.9 Tahun</td>
+              <td class="px-4 py-2">Elektronik</td>
+            </tr>
+            <tr class="hover:bg-gray-100 transition">
+              <td class="px-4 py-2">14</td>
+              <td class="px-4 py-2 flex items-center gap-2"><img src="https://i.pravatar.cc/100?img=14" class="w-8 h-8 rounded-full" />Nadia Zahra</td>
+              <td class="px-4 py-2">Rp6.900.000</td>
+              <td class="px-4 py-2">0.8 Tahun</td>
+              <td class="px-4 py-2">Fashion</td>
+            </tr>
+            <tr class="hover:bg-gray-100 transition">
+              <td class="px-4 py-2">15</td>
+              <td class="px-4 py-2 flex items-center gap-2"><img src="https://i.pravatar.cc/100?img=15" class="w-8 h-8 rounded-full" />Rangga Saputra</td>
+              <td class="px-4 py-2">Rp6.800.000</td>
+              <td class="px-4 py-2">0.6 Tahun</td>
+              <td class="px-4 py-2">Jasa Digital</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

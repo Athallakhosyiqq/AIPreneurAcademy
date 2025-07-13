@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI PRENEUR ACADEMY</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" type="image/png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script> <!-- Lucide Icon Script -->
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          transitionProperty: {
+            'width': 'width',
+            'margin': 'margin',
+            'transform': 'transform',
+            'all': 'all'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .sidebar-hidden {
+      transform: translateX(-100%);
+    }
+
+    .active-menu {
+      background-color: #bfdbfe;
+      color: #1d4ed8 !important;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 font-sans overflow-x-hidden transition-all duration-300">
+  <div class="flex h-screen relative">
+    <!-- Sidebar -->
+    <div id="sidebar"
+      class="fixed top-0 left-0 h-full w-64 bg-white dark:bg-gray-800 shadow-md p-4 transform -translate-x-full transition-transform duration-500 ease-in-out z-20">
+      <div class="flex justify-between items-center mb-8">
+        <div class="text-1xl font-bold text-blue-600 dark:text-blue-400">AI PRENEUR ACADEMY</div>
+        <button onclick="toggleSidebar()" class="text-xl md:hidden">✖</button>
+      </div>
+      <nav class="space-y-4" id="menu">
+        <a href="#" onclick="loadPage('HomePage.html', this)"
+          class="flex items-center gap-2 p-2 rounded-lg text-gray-600 dark:text-gray-300 font-semibold transition-all duration-300 hover:bg-blue-200 dark:hover:bg-blue-700 hover:translate-x-2 active-menu">
+          <i data-lucide="layout-dashboard" class="w-5 h-5"></i> Dashboard
+        </a>
+        <a href="#" onclick="loadPage('hallo.html', this)"
+          class="flex items-center gap-2 p-2 rounded-lg text-gray-600 dark:text-gray-300 font-semibold transition-all duration-300 hover:bg-blue-200 dark:hover:bg-blue-700 hover:translate-x-2">
+          <i data-lucide="briefcase" class="w-5 h-5"></i> My Business
+        </a>
+        <a href="#" onclick="loadPage('schedule.html', this)"
+          class="flex items-center gap-2 p-2 rounded-lg text-gray-600 dark:text-gray-300 font-semibold transition-all duration-300 hover:bg-blue-200 dark:hover:bg-blue-700 hover:translate-x-2">
+          <i data-lucide="calendar-days" class="w-5 h-5"></i> Schedule
+        </a>
+        <a href="#" onclick="loadPage('info.html', this)"
+          class="flex items-center gap-2 p-2 rounded-lg text-gray-600 dark:text-gray-300 font-semibold transition-all duration-300 hover:bg-blue-200 dark:hover:bg-blue-700 hover:translate-x-2">
+          <i data-lucide="info" class="w-5 h-5"></i> Info
+        </a>
+        <a href="#" onclick="loadPage('leaderboard.html', this)"
+          class="flex items-center gap-2 p-2 rounded-lg text-gray-600 dark:text-gray-300 font-semibold transition-all duration-300 hover:bg-blue-200 dark:hover:bg-blue-700 hover:translate-x-2">
+          <i data-lucide="trophy" class="w-5 h-5"></i> Leaderboard
+        </a>
+        <a href="#" onclick="loadPage('langganan.html', this)"
+          class="flex items-center gap-2 p-2 rounded-lg text-gray-600 dark:text-gray-300 font-semibold transition-all duration-300 hover:bg-blue-200 dark:hover:bg-blue-700 hover:translate-x-2">
+          <i data-lucide="credit-card" class="w-5 h-5"></i> Langganan
+        </a>
+        <a href="#" onclick="loadPage('AiVideo.html', this)"
+          class="flex items-center gap-2 p-2 rounded-lg text-gray-600 dark:text-gray-300 font-semibold transition-all duration-300 hover:bg-blue-200 dark:hover:bg-blue-700 hover:translate-x-2">
+          <i data-lucide="monitor-play" class="w-5 h-5"></i> AI Video
+        </a>
+
+        <a href="#" onclick="loadPage('Ai.html', this)"
+          class="flex items-center gap-2 p-2 rounded-lg text-gray-600 dark:text-gray-300 font-semibold transition-all duration-300 hover:bg-blue-200 dark:hover:bg-blue-700 hover:translate-x-2">
+          <i data-lucide="brain-circuit" class="w-5 h-5"></i> AI Partner
+        </a>
+        <a href="#" onclick="loadPage('Friends.html', this)"
+          class="flex items-center gap-2 p-2 rounded-lg text-gray-600 dark:text-gray-300 font-semibold transition-all duration-300 hover:bg-blue-200 dark:hover:bg-blue-700 hover:translate-x-2">
+          <i data-lucide="users" class="w-5 h-5"></i> Friends
+        </a>
+        <!-- Profil Pipih Minimalis Full Width -->
+        <div class="mt-14 px-0">
+          <div class="flex items-center gap-2 bg-blue-500 text-white rounded-xl px-3 py-2 w-full">
+            <img src="https://i.pravatar.cc/32" alt="Profile" class="w-8 h-8 rounded-full border-2 border-white">
+            <div class="leading-tight text-sm">
+              <div class="font-bold">ATHALLA KHOSYI</div>
+              <div class="text-xs font-semibold">Hobby dan Olahraga</div>
+            </div>
+          </div>
+        </div>
+
+
+      </nav>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-10 transition-opacity duration-500"
+      onclick="toggleSidebar()"></div>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col transition-all duration-300">
+      <!-- Top Bar -->
+      <div class="bg-blue-500 p-4 flex items-center justify-between transition-colors duration-300">
+        <div class="flex items-center space-x-4">
+          <button onclick="toggleSidebar()" class="text-white text-2xl">☰</button>
+          <input type="text" placeholder="Search here..." class="p-2 rounded-lg">
+        </div>
+        <div class="flex items-center space-x-4">
+          <button onclick="toggleDarkMode()" class="text-white">🌓</button>
+          <div class="relative">
+            <button id="profileButton" onclick="toggleDropdown()"
+              class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+              <img src="https://i.pravatar.cc/40" class="rounded-full" alt="Profile">
+            </button>
+            <div id="dropdownMenu"
+              class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-700 rounded-md shadow-lg hidden">
+              <a href="../main/profile.html"
+                class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200">
+                <i data-lucide="user" class="w-4 h-4 mr-2"></i> Profile
+              </a>
+              <a href="../main/settings.html"
+                class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200">
+                <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Settings
+              </a>
+              <a href="../login/login.html"
+                class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200">
+                <i data-lucide="log-out" class="w-4 h-4 mr-2"></i> Logout
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Loader -->
+      <div id="content" class="p-6 transition-opacity duration-300">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      sidebar.classList.toggle('-translate-x-full');
+      overlay.classList.toggle('hidden');
+    }
+
+    function toggleDropdown() {
+      const dropdown = document.getElementById('dropdownMenu');
+      dropdown.classList.toggle('hidden');
+    }
+
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+    }
+
+    document.addEventListener("click", function (event) {
+      const profileButton = document.getElementById('profileButton');
+      const dropdownMenu = document.getElementById('dropdownMenu');
+      if (!profileButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.classList.add('hidden');
+      }
+    });
+
+    function loadPage(page, element) {
+      const content = document.getElementById('content');
+      content.classList.add('opacity-0');
+
+      fetch(page)
+        .then(response => response.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const bodyContent = doc.body.innerHTML;
+          content.innerHTML = bodyContent;
+          content.classList.remove('opacity-0');
+        });
+
+      document.querySelectorAll('#menu a').forEach(link => link.classList.remove('active-menu'));
+      element.classList.add('active-menu');
+    }
+
+    // Render Lucide icons after page load
+    window.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+
+</html>

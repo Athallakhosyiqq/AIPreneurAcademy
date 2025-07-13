@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id" class="w-full h-full">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat WhatsApp Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="w-full h-full m-0 p-0 bg-[#0b141a] text-black overflow-hidden">
+
+    <div class="w-full h-screen flex">
+        <!-- Sidebar -->
+        <div class="w-1/4 bg-white flex flex-col border-r h-full">
+            <div class="p-4 font-bold text-lg border-b">Chat</div>
+            <div class="p-2">
+                <input type="text" placeholder="Cari atau mulai chat baru"
+                    class="w-full px-3 py-1 border rounded-full text-sm" />
+            </div>
+            <div class="overflow-y-auto flex-1">
+                <!-- Kontak -->
+                <div class="space-y-0">
+                    <div class="flex items-center p-3 border-b hover:bg-gray-100 cursor-pointer">
+                        <img src="https://i.pravatar.cc/150?img=11" class="w-10 h-10 rounded-full mr-3" />
+                        <div>
+                            <div class="font-semibold">Aaron XI RPL</div>
+                            <div class="text-sm text-gray-500">amann ajaa</div>
+                        </div>
+                    </div>
+
+                    <!-- Dewi Lestari with unread badge -->
+                    <div class="relative flex items-center p-3 border-b hover:bg-gray-100 cursor-pointer">
+                        <img src="https://i.pravatar.cc/150?img=12" class="w-10 h-10 rounded-full mr-3" />
+                        <div>
+                            <div class="font-semibold">Dewi Lestari</div>
+                            <div class="text-sm text-gray-500">oke, siap!</div>
+                        </div>
+                        <div class="absolute right-4 bg-blue-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                            3</div>
+                    </div>
+
+                    <!-- Budi Santoso with unread badge -->
+                    <div class="relative flex items-center p-3 border-b hover:bg-gray-100 cursor-pointer">
+                        <img src="https://i.pravatar.cc/150?img=13" class="w-10 h-10 rounded-full mr-3" />
+                        <div>
+                            <div class="font-semibold">Budi Santoso</div>
+                            <div class="text-sm text-gray-500">nanti aku kabarin ya</div>
+                        </div>
+                        <div class="absolute right-4 bg-blue-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                            1</div>
+                    </div>
+
+                    <div class="flex items-center p-3 border-b hover:bg-gray-100 cursor-pointer">
+                        <img src="https://i.pravatar.cc/150?img=14" class="w-10 h-10 rounded-full mr-3" />
+                        <div>
+                            <div class="font-semibold">Sari Melati</div>
+                            <div class="text-sm text-gray-500">makasih yaa</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-3 border-b hover:bg-gray-100 cursor-pointer">
+                        <img src="https://i.pravatar.cc/150?img=15" class="w-10 h-10 rounded-full mr-3" />
+                        <div>
+                            <div class="font-semibold">Rudi Hartono</div>
+                            <div class="text-sm text-gray-500">sama-sama bro</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-3 border-b hover:bg-gray-100 cursor-pointer">
+                        <img src="https://i.pravatar.cc/150?img=16" class="w-10 h-10 rounded-full mr-3" />
+                        <div>
+                            <div class="font-semibold">Intan Permata</div>
+                            <div class="text-sm text-gray-500">tunggu sebentar ya</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-3 border-b hover:bg-gray-100 cursor-pointer">
+                        <img src="https://i.pravatar.cc/150?img=17" class="w-10 h-10 rounded-full mr-3" />
+                        <div>
+                            <div class="font-semibold">Agus Wijaya</div>
+                            <div class="text-sm text-gray-500">aku on the way</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-3 border-b hover:bg-gray-100 cursor-pointer">
+                        <img src="https://i.pravatar.cc/150?img=18" class="w-10 h-10 rounded-full mr-3" />
+                        <div>
+                            <div class="font-semibold">Lina Marlina</div>
+                            <div class="text-sm text-gray-500">kita ngobrol nanti ya</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-3 border-b hover:bg-gray-100 cursor-pointer">
+                        <img src="https://i.pravatar.cc/150?img=19" class="w-10 h-10 rounded-full mr-3" />
+                        <div>
+                            <div class="font-semibold">Rangga Saputra</div>
+                            <div class="text-sm text-gray-500">yoi lanjut</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-3 border-b hover:bg-gray-100 cursor-pointer">
+                        <img src="https://i.pravatar.cc/150?img=20" class="w-10 h-10 rounded-full mr-3" />
+                        <div>
+                            <div class="font-semibold">Yuni Rahmawati</div>
+                            <div class="text-sm text-gray-500">see you!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Area -->
+        <div class="flex-1 flex flex-col bg-[#f0f2f5] h-full">
+            <!-- Header Chat -->
+            <div class="flex items-center p-4 bg-white border-b">
+                <img src="https://i.pravatar.cc/150?img=11" class="w-10 h-10 rounded-full mr-3" />
+                <div>
+                    <div class="font-semibold">Aaron XI RPL</div>
+                    <div class="text-sm text-gray-500">Terakhir dilihat hari ini pukul 4:47 AM</div>
+                </div>
+            </div>
+
+            <!-- Chat Content -->
+            <div class="p-6 space-y-4 flex-1 overflow-y-auto">
+                <!-- Chat bubbles -->
+                <div>
+                    <div>
+                        <!-- Chat Teman -->
+                        <div>
+                            <div
+                                class="inline-block bg-gray-200 text-black rounded-xl shadow text-sm px-4 py-2 max-w-xs">
+                                Bro, mau mulai usaha nih. Bisa bantu mikir-mikir dikit?
+                            </div>
+                        </div>
+
+                        <!-- Chat Kamu -->
+                        <div class="flex justify-end">
+                            <div
+                                class="inline-block bg-blue-500 text-white rounded-xl shadow text-sm px-4 py-2 max-w-xs">
+                                Gas, santai aja. Usaha apa tuh?
+                            </div>
+                        </div>
+
+                        <!-- Chat Teman -->
+                        <div>
+                            <div
+                                class="inline-block bg-gray-200 text-black rounded-xl shadow text-sm px-4 py-2 max-w-xs">
+                                Lagi kepikiran jualan ricebowl ayam crispy, kira-kira oke gak ya?
+                            </div>
+                        </div>
+
+                        <!-- Chat Kamu -->
+                        <div class="flex justify-end">
+                            <div
+                                class="inline-block bg-blue-500 text-white rounded-xl shadow text-sm px-4 py-2 max-w-xs">
+                                Wah mantap itu, orang Indo doyan banget ayam crispy. Udah kepikiran konsepnya?
+                            </div>
+                        </div>
+
+                        <!-- Chat Teman -->
+                        <div>
+                            <div
+                                class="inline-block bg-gray-200 text-black rounded-xl shadow text-sm px-4 py-2 max-w-xs">
+                                Ini nih gue udah bikin konsep packaging-nya, coba liat deh.
+                            </div>
+                        </div>
+
+                        <!-- Chat Teman Kirim Gambar -->
+                        <div>
+                            <div
+                                class="inline-block bg-gray-200 text-black rounded-xl shadow text-sm px-4 py-2 max-w-xs">
+                                <img src="../image/Nasi.jpg" alt="Contoh Packaging" class="rounded-lg mb-1" />
+                                Gimana menurut lo?
+                            </div>
+                        </div>
+
+                        <!-- Chat Kamu -->
+                        <div class="flex justify-end">
+                            <div
+                                class="inline-block bg-blue-500 text-white rounded-xl shadow text-sm px-4 py-2 max-w-xs">
+                                Cakep sih, tinggal tambahin logo sama info kontak dikit. Biar makin niat gitu
+                                tampilannya.
+                            </div>
+                        </div>
+
+                        <!-- Chat Teman -->
+                        <div>
+                            <div
+                                class="inline-block bg-gray-200 text-black rounded-xl shadow text-sm px-4 py-2 max-w-xs">
+                                Siap bro, makasih masukannya! Nanti gue otak-atik lagi deh
+                            </div>
+                        </div>
+
+                        <!-- Chat Kamu -->
+                        <div class="flex justify-end">
+                            <div
+                                class="inline-block bg-blue-500 text-white rounded-xl shadow text-sm px-4 py-2 max-w-xs">
+                                Sip, semangat yaa! Jangan lupa bagi hasil wkwk 😆
+                            </div>
+                        </div>
+
+
+                        <!-- Input Chat -->
+                        <div class="p-4 bg-white border-t flex items-center">
+                            <input type="text" placeholder="Ketik pesan"
+                                class="flex-1 px-4 py-2 border rounded-full text-sm text-gray-800" />
+                            <button class="ml-2 text-blue-500 font-semibold">Kirim</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulasi Chat AI - Wirausaha</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Scrollbar Custom */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(156, 163, 175, 0.6);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white h-screen overflow-hidden font-sans">
+
+    <div class="flex h-full">
+
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white text-black p-5 shadow-lg rounded-tr-xl rounded-br-xl">
+  <!-- Header -->
+  <div class="mb-6 p-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg shadow flex items-center gap-3">
+    <span class="text-2xl"></span>
+    <h2 class="text-xl font-bold tracking-wide">AI Preview</h2>
+  </div>
+
+  <!-- Menu Utama -->
+  <nav class="mb-8">
+    <ul class="space-y-3">
+      <li class="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer bg-gray-100 hover:bg-blue-100 transition">
+        <span class="text-lg">➕</span>
+        <span class="text-sm font-medium">New Chat</span>
+      </li>
+      <li class="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer bg-gray-100 hover:bg-blue-100 transition">
+        <span class="text-lg">🔍</span>
+        <span class="text-sm font-medium">Explore</span>
+      </li>
+    </ul>
+  </nav>
+
+            <div>
+                <h3 class="font-semibold mb-3">Riwayat Chat</h3>
+                <ul class="space-y-3 text-sm">
+                    <li class="bg-gray-200 px-3 py-2 rounded-xl shadow hover:bg-gray-300 cursor-pointer transition">
+                        Rekomendasi...
+                    </li>
+                    <li class="bg-gray-200 px-3 py-2 rounded-xl shadow hover:bg-gray-300 cursor-pointer transition">
+                        Berapa modal...
+                    </li>
+                    <li class="bg-gray-200 px-3 py-2 rounded-xl shadow hover:bg-gray-300 cursor-pointer transition">
+                        Target pasar...
+                    </li>
+                    <li class="bg-gray-200 px-3 py-2 rounded-xl shadow hover:bg-gray-300 cursor-pointer transition">
+                        Baur modal
+                    </li>
+                    <li class="bg-gray-200 px-3 py-2 rounded-xl shadow hover:bg-gray-300 cursor-pointer transition">
+                        Pengembangan
+                    </li>
+                     <li class="bg-gray-200 px-3 py-2 rounded-xl shadow hover:bg-gray-300 cursor-pointer transition">
+                        Pengembangan
+                    </li>
+                     <li class="bg-gray-200 px-3 py-2 rounded-xl shadow hover:bg-gray-300 cursor-pointer transition">
+                        Pengembangan
+                    </li>
+                     <li class="bg-gray-200 px-3 py-2 rounded-xl shadow hover:bg-gray-300 cursor-pointer transition">
+                        Pengembangan
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+
+        <!-- Chat Area -->
+        <main class="flex-1 p-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+
+            <!-- Chat card -->
+            <div class="bg-white text-black rounded-xl shadow-2xl h-full flex flex-col overflow-hidden">
+
+                <!-- Header -->
+                <div class="p-4 border-b flex justify-between items-center bg-white sticky top-0 z-10">
+                    <div class="flex items-center gap-3">
+                        <img src="../image/AI.jpg" alt="Robot Icon" class="w-9 h-9 rounded-full shadow" />
+                        <h1 class="text-xl font-bold text-gray-800">AI PARTNER</h1>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 bg-yellow-400 rounded-full"></span>
+                        <span class="w-3 h-3 bg-blue-500 rounded-full"></span>
+                        <span class="w-3 h-3 bg-red-500 rounded-full"></span>
+                    </div>
+                </div>
+
+                <!-- Chat content -->
+                <div class="flex-1 overflow-y-auto p-6 space-y-4 bg-gray-50">
+                    <!-- Chat Bubble AI -->
+                    <div class="flex items-start">
+                        <div class="bg-gray-200 text-gray-800 p-4 rounded-2xl rounded-tl-none shadow-md max-w-xl">
+                            Halo! Apa yang bisa saya bantu dalam pengembangan wirausaha Anda?
+                        </div>
+                    </div>
+
+                    <!-- Chat Bubble User -->
+                    <div class="flex justify-end">
+                        <div class="bg-blue-500 text-white p-4 rounded-2xl rounded-tr-none shadow-md max-w-xl">
+                            Saya ingin tahu cara mengembangkan bisnis makanan ringan saya.
+                        </div>
+                    </div>
+
+                    <!-- Chat Bubble AI -->
+                    <div class="flex items-start">
+                        <div class="bg-gray-200 text-gray-800 p-4 rounded-2xl rounded-tl-none shadow-md max-w-xl">
+                            Langkah pertama adalah memahami target pasar. Apakah Anda sudah menentukan siapa
+                            konsumennya?
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="bg-blue-500 text-white p-4 rounded-2xl rounded-tr-none shadow-md max-w-xl">
+                            Ya, anak muda dan pekerja kantoran.
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="bg-gray-200 text-gray-800 p-4 rounded-2xl rounded-tl-none shadow-md max-w-xl">
+                            Sangat bagus! Berikut beberapa langkah yang bisa Anda lakukan:
+                            <ol class="list-decimal list-inside mt-2">
+                                <li><strong>Riset Pasar:</strong> Pelajari tren makanan ringan yang disukai target Anda.
+                                </li>
+                                <li><strong>Inovasi Produk:</strong> Tambahkan varian rasa unik atau kemasan menarik.
+                                </li>
+                                <li><strong>Branding:</strong> Ciptakan nama merek dan logo yang mudah diingat.</li>
+                                <li><strong>Pemasaran Digital:</strong> Gunakan media sosial untuk promosi.</li>
+                                <li><strong>Distribusi:</strong> Kerja sama dengan toko, kantor, atau marketplace
+                                    online.</li>
+                                <li><strong>Uji Coba:</strong> Bagikan sampel untuk mendapatkan masukan.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="bg-blue-500 text-white p-4 rounded-2xl rounded-tr-none shadow-md max-w-xl">
+                            Saya masih bingung soal cara memasarkan lewat media sosial. Bisa dijelaskan?
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="bg-gray-200 text-gray-800 p-4 rounded-2xl rounded-tl-none shadow-md max-w-xl">
+                            Tentu! Berikut tips-tips:
+                            <ul class="list-disc list-inside mt-2">
+                                <li>Gunakan foto makanan yang menggugah selera.</li>
+                                <li>Konten video singkat proses atau testimoni.</li>
+                                <li>Hashtag relevan: <code>#snackhits</code>, <code>#makananenak</code>.</li>
+                                <li>Posting rutin 3–4 kali seminggu.</li>
+                                <li>Balas komentar dan DM dari calon pembeli.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="bg-gray-200 text-gray-800 p-4 rounded-2xl rounded-tl-none shadow-md max-w-xl">
+                            Berikut contoh konten promosi:
+                            <img src="../image/Boncabe.jpg" alt="Contoh snack" class="mt-3 rounded-md shadow-lg">
+                            <p class="mt-2">Gambar ini bisa digunakan dengan teks promosi seperti “Camilan sehat, cocok
+                                untuk kerja & nonton!”</p>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="bg-blue-500 text-white p-4 rounded-2xl rounded-tr-none shadow-md max-w-xl">
+                            Bagaimana kalau saya belum punya logo dan nama brand?
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="bg-gray-200 text-gray-800 p-4 rounded-2xl rounded-tl-none shadow-md max-w-xl">
+                            Tak masalah! Coba:
+                            <ul class="list-disc list-inside mt-2">
+                                <li><strong>Nama Unik:</strong> Gabungkan kata khas, misalnya "NgemilTime", "Snackster".
+                                </li>
+                                <li><strong>Warna Cerah:</strong> Gunakan kuning/oranye dengan font tebal.</li>
+                                <li><strong>Alat Gratis:</strong> Canva, Looka, atau Hatchful.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="bg-blue-500 text-white p-4 rounded-2xl rounded-tr-none shadow-md max-w-xl">
+                            Terima kasih! Ini sangat membantu. Saya jadi lebih semangat.
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="bg-gray-200 text-gray-800 p-4 rounded-2xl rounded-tl-none shadow-md max-w-xl">
+                            Senang bisa membantu! Jika Anda butuh desain label atau strategi launching, saya siap bantu
+                            💡✨
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat input -->
+                <div class="p-4 border-t bg-white flex items-center gap-2">
+                    <input type="text" placeholder="Ketik pesan..."
+                        class="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 text-black" />
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                        Kirim
+                    </button>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

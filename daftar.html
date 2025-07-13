@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daftar - AI Preneur Academy</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/747/747545.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+  <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .backdrop-blur {
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.75);
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-r from-purple-400 to-indigo-500 min-h-screen flex items-center justify-center py-12 font-sans">
+  <div id="registerCard" class="rounded-xl shadow-xl p-8 max-w-md w-full fade-in-up backdrop-blur">
+    <div class="flex justify-center mb-6">
+      <img src="../image/Screenshot 2025-07-12 180957 (1).png" alt="Logo" class="h-30 w-30 rounded-lg object-cover" />
+    </div>
+    <h2 class="text-3xl font-bold mb-6 text-center text-indigo-600">Buat Akun Baru</h2>
+    <form id="registerForm" class="space-y-6" novalidate>
+      <div>
+        <label for="name" class="block mb-2 text-gray-700 font-semibold">Nama Lengkap</label>
+        <input type="text" id="name" name="name" required placeholder="Nama lengkap"
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+      </div>
+      <div>
+        <label for="email" class="block mb-2 text-gray-700 font-semibold">Email</label>
+        <input type="email" id="email" name="email" required placeholder="contoh@email.com"
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+      </div>
+      <div>
+        <label for="password" class="block mb-2 text-gray-700 font-semibold">Kata Sandi</label>
+        <input type="password" id="password" name="password" required placeholder="Kata sandi"
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+      </div>
+      <div>
+        <label for="confirmPassword" class="block mb-2 text-gray-700 font-semibold">Konfirmasi Sandi</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Ulangi kata sandi"
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+      </div>
+      <button type="submit"
+        class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded-md transition-colors duration-300">
+        Daftar Sekarang
+      </button>
+      <a href="login.html"
+        class="block text-center w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 rounded-md transition-colors duration-300">
+        Sudah punya akun? Masuk
+      </a>
+    </form>
+  </div>
+
+  <script>
+    VanillaTilt.init(document.querySelector("#registerCard"), {
+      max: 10,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.2
+    });
+
+    document.getElementById("registerForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = this.name.value.trim();
+      const email = this.email.value.trim();
+      const password = this.password.value;
+      const confirmPassword = this.confirmPassword.value;
+
+      if (!name || !email || !password || !confirmPassword) {
+        alert("Mohon isi semua bidang!");
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        alert("Kata sandi tidak cocok!");
+        return;
+      }
+
+      const users = JSON.parse(localStorage.getItem("users") || "[]");
+      const userExists = users.some(u => u.email === email);
+      if (userExists) {
+        alert("Email sudah digunakan!");
+        return;
+      }
+
+      users.push({ email, password });
+      localStorage.setItem("users", JSON.stringify(users));
+
+      alert("Pendaftaran berhasil! Silakan login.");
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+
+</html>
